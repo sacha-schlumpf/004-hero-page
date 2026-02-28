@@ -84,3 +84,34 @@ span {
 
 .bio {
 }
+
+/* NAVBAR CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: center;
+  padding: 20px 40px;
+}
+
+/* REMOVE BULLET POINTS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* space between links */
+  margin: 0;
+  padding: 0;
+}
+
+/* NORMAL LINKS */
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* HIGHLIGHTED BUTTON */
+.cta {
+  background-color: #f1b308; /* yellow highlight */
+  padding: 8px 16px;
+  border-radius: 16px;
+}
