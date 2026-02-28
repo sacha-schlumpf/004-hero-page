@@ -11,6 +11,16 @@
 @font-face {
   font-family: "Author";
   src:
+    url("fonts/Author-Medium.woff2") format("woff2"),
+    url("fonts/Author-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Author";
+  src:
     url("fonts/Author-Bold.woff2") format("woff2"),
     url("fonts/Author-Bold.woff") format("woff");
   font-weight: bold;
@@ -88,30 +98,64 @@ span {
 /* NAVBAR CONTAINER */
 .navbar {
   display: flex;
-  justify-content: space-between; /* left + right */
+  justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  font-weight: 500;
 }
 
 /* REMOVE BULLET POINTS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px; /* space between links */
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
 /* NORMAL LINKS */
 .nav-links a {
+  position: relative;
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: #262424;
+}
+
+/* Create the hidden underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #262424;
+
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Animate on hover */
+.nav-links a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* HIGHLIGHTED BUTTON */
 .cta {
-  background-color: #f1b308; /* yellow highlight */
+  background-color: #f1b308;
   padding: 8px 16px;
   border-radius: 16px;
+  color: white;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.cta::after {
+  display: none;
+}
+
+.cta:hover {
+  background-color: #f4d01e; /* lighter/different color */
+  transform: translateY(-2px); /* subtle lift effect */
 }
