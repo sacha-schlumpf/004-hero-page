@@ -65,10 +65,12 @@ body::after {
 }
 
 header {
-  margin: 0px 20%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: calc(100vh - 100px); /* subtract navbar height */
+  padding: 0 60px; /* space on sides */
+  gap: 80px; /* 👈 THIS adds horizontal space */
 }
 
 h2 {
@@ -93,10 +95,12 @@ span {
 }
 
 .bio {
+  max-width: 700px;
 }
 
 /* NAVBAR CONTAINER */
 .navbar {
+  font-size: 16pt;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,8 +147,8 @@ span {
 /* HIGHLIGHTED BUTTON */
 .cta {
   background-color: #f1b308;
-  padding: 8px 16px;
-  border-radius: 16px;
+  padding: 8px 20px;
+  border-radius: 20px;
   color: white;
   transition:
     background-color 0.3s ease,
